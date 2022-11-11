@@ -4,10 +4,50 @@
  */
 package com.mycompany.collections;
 
+import Classes.BinaryTree;
+import Classes.Queue;
+import java.util.Scanner;
+
 /**
  *
  * @author Administrador
  */
 public class ArbolesBinarios {
     
+    public static void Iniciar(){
+        
+        BinaryTree tree = new BinaryTree();
+        
+        tree.inorder_tree_walk(tree);
+        
+//        Scanner lectura = new Scanner (System.in);
+//        Queue que = new Queue();
+//        int op = 0;
+//        
+//        do {
+//            System.out.println("COLA \n\n");
+//            System.out.println("1. Encolar \n");
+//            System.out.println("2. Desencolar \n");
+//            System.out.println("3. Mostrar Queue \n");
+//            System.out.println("4. Terminar \n");
+//            
+//            op = Integer.parseInt(lectura.next());
+//            
+//            switch (op) {
+//                case 1:
+//                        System.out.print("Ingrese valor: ");
+//                        int valor = Integer.parseInt(lectura.next());
+//                        que.enQueue(valor);
+//                    break;
+//                case 2:
+//                        Integer valorCola = que.deQueue();
+//                        if(valorCola != null)
+//                            System.out.println(String.format("Valor %d sacado de la Cola", valorCola));
+//                    break;
+//                case 3:
+//                        que.ShowStructure();
+//                    break;
+//            }
+//        } while (op < 4);
+    }
 }

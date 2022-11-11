@@ -15,5 +15,6 @@ public class Collections {
         //Pilas.Iniciar();
         //Colas.Iniciar();
         //TablasHash.Iniciar();
+        ArbolesBinarios.Iniciar();
     }
 }

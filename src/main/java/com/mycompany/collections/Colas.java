@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 public class Colas {
     
-     public static void Iniciar(){
+    public static void Iniciar(){
         Scanner lectura = new Scanner (System.in);
         Queue que = new Queue();
         int op = 0;
