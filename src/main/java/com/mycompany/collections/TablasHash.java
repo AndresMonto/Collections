@@ -5,16 +5,17 @@
 package com.mycompany.collections;
 
 import Classes.HashTable;
-import Classes.Utilities;
+import Classes.Start;
 import java.util.Scanner;
 
 /**
  *
  * @author Administrador
  */
-public class TablasHash extends Utilities{
-    
-    public static void Iniciar(){
+public class TablasHash extends Start{
+        
+    @Override
+    public void Begin() {
         Scanner lectura = new Scanner (System.in);
         HashTable table = new HashTable();
         int op = 0;

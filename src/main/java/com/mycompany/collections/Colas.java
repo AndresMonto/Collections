@@ -5,28 +5,30 @@
 package com.mycompany.collections;
 
 import Classes.Queue;
+import Classes.Start;
 import java.util.Scanner;
 
 /**
  *
  * @author Administrador
  */
-public class Colas {
+public class Colas extends Start{
     
-    public static void Iniciar(){
+    @Override
+    public void Begin() {
         Scanner lectura = new Scanner (System.in);
         Queue que = new Queue();
         int op = 0;
-        
+
         do {
             System.out.println("COLA \n\n");
             System.out.println("1. Encolar \n");
             System.out.println("2. Desencolar \n");
             System.out.println("3. Mostrar Queue \n");
             System.out.println("4. Terminar \n");
-            
+
             op = Integer.parseInt(lectura.next());
-            
+
             switch (op) {
                 case 1:
                         System.out.print("Ingrese valor: ");

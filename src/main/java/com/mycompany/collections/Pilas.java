@@ -5,16 +5,17 @@
 package com.mycompany.collections;
 
 import Classes.Stack;
-import Classes.Utilities;
+import Classes.Start;
 import java.util.Scanner;
 
 /**
  *
  * @author Administrador
  */
-public class Pilas {
+public class Pilas extends Start{
     
-    public static void Iniciar(){
+    @Override
+    public void Begin() {
         Scanner lectura = new Scanner (System.in);
         Stack sk = new Stack();
         int op = 0;
@@ -25,6 +26,7 @@ public class Pilas {
             System.out.println("2. Quitar Último Valor \n");
             System.out.println("3. Verificar vacío \n");
             System.out.println("4. Mostrar Pila \n");
+            System.out.println("5. Terminar \n");
             
             op = Integer.parseInt(lectura.next());
             
@@ -45,11 +47,7 @@ public class Pilas {
                     break;
             }
             
-            System.out.println("1. Continuar");
-            System.out.println("2. Terminar");
-            op = Integer.parseInt(lectura.next());
-            
-        } while (op == 1);
+        } while (op <= 4);
     }
     
 }

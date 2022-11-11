@@ -5,16 +5,17 @@
 package com.mycompany.collections;
 
 import Classes.BinaryTree;
-import Classes.Queue;
+import Classes.Start;
 import java.util.Scanner;
 
 /**
  *
  * @author Administrador
  */
-public class ArbolesBinarios {
+public class ArbolesBinarios extends Start{
     
-    public static void Iniciar(){
+    @Override
+    public void Begin() {
         
         Scanner lectura = new Scanner (System.in);
         int op = 0;
