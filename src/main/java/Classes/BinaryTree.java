@@ -8,7 +8,7 @@ package Classes;
  *
  * @author Administrador
  */
-public class BinaryTree {
+public class BinaryTree extends Utilities{
     
     public int Value;
     public BinaryTree Father;
@@ -47,14 +47,14 @@ public class BinaryTree {
         }
     }
     
-    public BinaryTree tree_search(BinaryTree x, int k){
+    public BinaryTree recursive_tree_search(BinaryTree x, int k){
         if (x == null || k == x.Value){
             return x;
         }
         if (k < x.Value)
-            return tree_search(x.LeftSon, k);
+            return recursive_tree_search(x.LeftSon, k);
         else
-            return tree_search(x.RightSon, k);
+            return recursive_tree_search(x.RightSon, k);
     }
     
     public BinaryTree iterative_tree_search(BinaryTree x, int k){
@@ -79,6 +79,69 @@ public class BinaryTree {
             x = x.RightSon;
         
         return x;
+    }
+    
+    public BinaryTree tree_successor(BinaryTree x){
+        BinaryTree y;
+        
+        if (x.RightSon != null)
+            return tree_minimum(x.RightSon);
+        else{
+            y = x.Father;
+        
+            while(y != null && x == y.RightSon){
+                x = y;
+                y = y.Father;
+            }
+        
+            return y;
+        }
+    }
+    
+    public BinaryTree tree_predecessor(BinaryTree x){
+        BinaryTree y;
+        
+        if (x.LeftSon != null)
+            return tree_maximum(x.LeftSon);
+        else{
+            y = x.Father;
+        
+            while(y != null && x == y.LeftSon){
+                x = y;
+                y = y.Father;
+            }
+            return y;
+        }
+    }
+    
+    public void tree_insert(BinaryTree T,BinaryTree z){
+        BinaryTree x = T;
+        BinaryTree y = null;
+        while(x != null){
+            y = x;
+            if (z.Value < x.Value)
+                x = x.LeftSon;
+            else
+                x = x.RightSon;
+        }
+        z.Father = y;
+        if (y == null)
+            T = z;
+        else if (z.Value < y.Value)
+            y.LeftSon = z;
+        else
+            y.RightSon = z;
+    }
+    
+    public void ShowStructure(BinaryTree x){
+
+        if (x != null){
+            ShowStructure(x.LeftSon);
+            
+            System.out.println(String.format("Nodo: %d   Padre: %s   H_Izq: %s   D_Der: %s", 
+                                                    x.Value, (x.Father != null) ? String.valueOf(x.Father.Value) : "null", (x.LeftSon != null) ? String.valueOf(x.LeftSon.Value) : "null", (x.RightSon != null) ? String.valueOf(x.RightSon.Value) : "null"));
+            ShowStructure(x.RightSon);
+        }
     }
 
         

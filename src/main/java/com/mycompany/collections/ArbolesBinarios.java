@@ -18,7 +18,9 @@ public class ArbolesBinarios {
         
         BinaryTree tree = new BinaryTree();
         
-        tree.inorder_tree_walk(tree);
+        //tree.inorder_tree_walk(tree);
+        tree.tree_insert(tree, new BinaryTree(5, null, null, null));
+        tree.ShowStructure(tree);
         
 //        Scanner lectura = new Scanner (System.in);
 //        Queue que = new Queue();
